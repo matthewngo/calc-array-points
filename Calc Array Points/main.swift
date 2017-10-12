@@ -98,16 +98,33 @@ func subtractPoints(p1: (x1: Int, y1: Int), p2: (x2: Int, y2: Int)) -> (Int, Int
     return (x, y)
 }
 
-
-func addDictionaryPoints(p1: [String:Int], p2: [String:Int]) -> [String:Int] {
-    let x: Int = p1["x"]! + p2["x"]!
-    let y: Int = p1["y"]! + p2["y"]!
+func addDictionaryPoints(p1: [String:Double], p2: [String:Double]) -> [String:Double] {
+    let x: Double = p1["x"]! + p2["x"]!
+    let y: Double = p1["y"]! + p2["y"]!
     return ["x":x, "y":y]
 }
 
-func subtractDictionaryPoints(p1: [String:Int], p2: [String:Int]) -> [String:Int] {
-    let x: Int = p1["x"]! - p2["x"]!
-    let y: Int = p1["y"]! - p2["y"]!
+func subtractDictionaryPoints(p1: [String:Double], p2: [String:Double]) -> [String:Double] {
+    var x: Double = 0
+    var y: Double = 0
+    if p1["x"] != nil && p2["x"] != nil {
+        x = p1["x"]! - p2["x"]!
+    }
+     if p1["y"] != nil && p2["y"] != nil {
+        y = p1["y"]! - p2["y"]!
+    }
+    if p1["x"] == nil && p2["x"] != nil {
+        x = p2["x"]!
+    }
+    if p1["y"] == nil && p2["y"] != nil {
+        y = p2["y"]!
+    }
+    if p1["x"] != nil && p2["x"] == nil {
+        x = p1["x"]!
+    }
+    if p1["y"] != nil && p2["y"] == nil {
+        y = p1["y"]!
+    }
     return ["x":x, "y":y]
 }
 
