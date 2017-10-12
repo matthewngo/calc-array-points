@@ -26,11 +26,16 @@ func divide(num1: Int, num2: Int) -> Int {
 
 func genericMathOperation(operation: String, num1: Int, num2: Int) -> Int {
     switch(operation) {
-    case "add": return add(num1: num1, num2: num2)
-    case "subtract": return subtract(num1: num1, num2: num2)
-    case "multiply": return multiply(num1: num1, num2: num2)
-    case "divide": return divide(num1: num1, num2: num2)
-    default: return 0
+    case "add":
+        return add(num1: num1, num2: num2)
+    case "subtract":
+        return subtract(num1: num1, num2: num2)
+    case "multiply":
+        return multiply(num1: num1, num2: num2)
+    case "divide":
+        return divide(num1: num1, num2: num2)
+    default:
+        return 0
     }
 }
 
@@ -68,11 +73,16 @@ func avg(array: [Int]) -> Int {
 
 func genericArrayOperation(operation: String, array: [Int]) -> Int {
     switch(operation) {
-    case "add": return addArray(array: array)
-    case "count": return count(array: array)
-    case "multiply": return multiplyArray(array: array)
-    case "avg": return avg(array: array)
-    default: return 0
+    case "add":
+        return addArray(array: array)
+    case "count":
+        return count(array: array)
+    case "multiply":
+        return multiplyArray(array: array)
+    case "avg":
+        return avg(array: array)
+    default:
+        return 0
     }
 }
 
@@ -88,19 +98,20 @@ func subtractPoints(p1: (x1: Int, y1: Int), p2: (x2: Int, y2: Int)) -> (Int, Int
     return (x, y)
 }
 
-/*
-func addDictionaryPoints(p1: (x1: Int, y1: Int), p2: (x2: Int, y2: Int)) -> [Int:Int] {
-    let x: Int = p1.x1 + p2.x2
-    let y: Int = p1.y1 + p2.y2
-    return (x, y)
+
+func addDictionaryPoints(p1: [String:Int], p2: [String:Int]) -> [String:Int] {
+    let x: Int = p1["x"]! + p2["x"]!
+    let y: Int = p1["y"]! + p2["y"]!
+    return ["x":x, "y":y]
 }
 
-func subtractDictionaryPoints(p1: [String:Int], p2: [String:Int]) -> [Int:Int] {
-    let x: Int =  - p2.x2
-    let y: Int = p1.y1 - p2.y2
-    return (x, y)
+func subtractDictionaryPoints(p1: [String:Int], p2: [String:Int]) -> [String:Int] {
+    let x: Int = p1["x"]! - p2["x"]!
+    let y: Int = p1["y"]! - p2["y"]!
+    return ["x":x, "y":y]
 }
-*/
+
+
 
 
 
